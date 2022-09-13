@@ -8,7 +8,7 @@ import json
 from copy import deepcopy
 
 #import data
-with open('../data/raw/countries.geojson') as response:
+with open('./data/raw/countries.geojson') as response:
     geojson = json.load(response)
 
 #create cache with raw_df inside
@@ -17,7 +17,7 @@ def load_data(path):
     df = pd.read_csv(path)
     return df
 
-df_raw = load_data(path='../data/raw/volcano_ds_pop.csv')
+df_raw = load_data(path='./data/raw/volcano_ds_pop.csv')
 df = deepcopy(df_raw)
 
 df['Country'] = df['Country'].replace({'United States':'United States of America',
